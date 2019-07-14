@@ -12,8 +12,6 @@ public abstract class ClassDatabase extends RoomDatabase {
     private static final String DATABASE_NAME = "class_table";
     private static final Object LOCK = new Object();
     private ClassDatabase sInstance;
-    private ClassDatabase() {
-    }
 
     /**
      * Singleton pattern is used so that only one instance of the database object is

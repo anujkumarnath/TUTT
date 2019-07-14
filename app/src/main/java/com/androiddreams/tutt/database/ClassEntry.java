@@ -1,6 +1,7 @@
 package com.androiddreams.tutt.database;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 /**
@@ -57,6 +58,7 @@ public class ClassEntry {
      * @param periods represents the units of periods take by faculty
      * @param notes represents the notes stroed if any
      */
+    @Ignore
     public ClassEntry(String subject, String faculty, String start_time, String end_time,
                       String room_no, String periods, String notes) {
         this.subject = subject;
