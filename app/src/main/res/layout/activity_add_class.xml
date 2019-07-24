@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="24dp"
+    android:background="@android:color/darker_gray"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -69,13 +70,14 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
-            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="16dp"
             android:text="End time"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            android:textSize="20sp" />
 
         <TextView
             android:textSize="20sp"
@@ -86,6 +88,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/btn_save"
+        android:layout_margin="16dp"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:text="SAVE"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </LinearLayout>

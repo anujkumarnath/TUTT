@@ -11,14 +11,14 @@ public abstract class ClassDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "class_table";
     private static final Object LOCK = new Object();
-    private ClassDatabase sInstance;
+    private static ClassDatabase sInstance;
 
     /**
      * Singleton pattern is used so that only one instance of the database object is
      * created and the block is made thread safe such that multiple threads running at the same time
      * cannot create multiple instances.
      */
-    public ClassDatabase getInstance(Context context) {
+    public static ClassDatabase getInstance(Context context) {
         if (sInstance == null) {
             synchronized (LOCK) {
                 if (sInstance == null) {

@@ -6,22 +6,37 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.androiddreams.tutt.database.ClassDatabase;
+import com.androiddreams.tutt.database.ClassEntry;
 
 import java.util.Calendar;
 
 public class AddClassActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private ClassDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_class);
+        db = ClassDatabase.getInstance(AddClassActivity.this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         findViewById(R.id.layout_start_time).setOnClickListener(this);
         findViewById(R.id.layout_end_time).setOnClickListener(this);
+
+        LinearLayout saveButton = findViewById(R.id.btn_save);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              // TODO
+            }
+        });
     }
 
     private String getFormattedTime(int hourOfDay, int minute) {
@@ -32,8 +47,7 @@ public class AddClassActivity extends AppCompatActivity implements View.OnClickL
             postFix = " PM";
         }
 
-
-        return String.format("%02d:%02d %s", formattedHour, minute, postFix);//formattedHour + ":" + minute + postFix;
+        return String.format("%02d:%02d %s", formattedHour, minute, postFix);
     }
 
     @Override
